@@ -7,7 +7,7 @@ RSpec.describe GramsController, type: :controller do
     it "should allow a user to destroy grams" do
       gram = FactoryGirl.create(:gram)
       delete :destroy, params: { id: gram.id }
-      expect(response).to redirect_to root path
+      expect(response).to redirect_to root_path
       gram = Gram.find_by_id(gram.id)
       expect(gram).to eq nil
     end
